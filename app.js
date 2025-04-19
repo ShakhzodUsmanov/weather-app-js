@@ -1,4 +1,4 @@
-const id = '651cb39c36eae558df6cd6ba6fa19373';
+const id = '7e4f9eb51f38b8ff5e99b3064a5b853c';
 const url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + id;
 const city = document.querySelector('.name');
 const form = document.querySelector("form");
