@@ -1,22 +1,24 @@
-let id = '9505fd1df737e20152fbd78cdb289b6a';
-let url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + id;
-let city = document.querySelector('.name');
-let form = document.querySelector("form");
-let temperature = document.querySelector('.temperature');
-let description = document.querySelector('.description');
-let valueSearch = document.getElementById('name');
-let clouds = document.getElementById('clouds');
-let humidity = document.getElementById('humidity');
-let pressure = document.getElementById('pressure');
-let main = document.querySelector('main');
+const id = '651cb39c36eae558df6cd6ba6fa19373';
+const url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + id;
+const city = document.querySelector('.name');
+const form = document.querySelector("form");
+const temperature = document.querySelector('.temperature');
+const description = document.querySelector('.description');
+const valueSearch = document.getElementById('name');
+const clouds = document.getElementById('clouds');
+const humidity = document.getElementById('humidity');
+const pressure = document.getElementById('pressure');
+const main = document.querySelector('main');
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();  
     if(valueSearch.value != ''){
         searchWeather();
     }
 });
+
 const searchWeather = () => {
-    fetch(url+'&q='+ valueSearch.value)
+    fetch(`${url}&q=${valueSearch.value}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -39,9 +41,10 @@ const searchWeather = () => {
             valueSearch.value = '';
         })
 }
+
 // search Default
 const initApp = () => {
-    valueSearch.value = 'Washington';
+    valueSearch.value = 'Tashkent';
     searchWeather();
 }
 initApp();
